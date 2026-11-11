@@ -1,6 +1,8 @@
 import React from 'react';
+import materials from "./MaterialData.js";
+import MaterialsTable from "./MaterialsTable.jsx";
 
-function MaterialsList(props) {
+function MaterialsList() {
     return (
         <>
             <h1>
@@ -14,8 +16,10 @@ function MaterialsList(props) {
             גריד - הנתונים מוצגים כגלריה, כל פריט יהיה כותרת של שם ומתחת כמות
             התוכנה עולה עם תצורת התצוגה שנבחרה בפעם הקודמת
             ברירת המחדל היא הטבלה
+            להוסיף עיצוב לשתי התצוגות
             */
             }
+            <MaterialsTable mData={materials} />
         </>
     );
 }

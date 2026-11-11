@@ -3,3 +3,4 @@ const materials=[
     {name:'חומוס'  ,Qty:1},
     {name:'שמן זית',Qty:1},
 ];
+export default materials;
