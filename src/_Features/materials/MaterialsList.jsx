@@ -1,14 +1,24 @@
-import React from 'react';
+import React,{useState} from 'react';
 import materials from "./MaterialData.js";
 import MaterialsTable from "./MaterialsTable.jsx";
 import MaterialsGrid from "./MaterialsGrid.jsx";
 
 function MaterialsList() {
+    const [isTableView, setIsTableView] = useState(true);
+    const GridView = () => {
+        setIsTableView(false);
+    }
+    const TableView = () => {
+        setIsTableView(true);
+    }
+    
     return (
         <>
             <h1>
                 רשימת חומרים
             </h1>
+            <button onClick={GridView}>גלריה</button>
+            <button onClick={TableView}>טבלה</button>
             {
             /*
             VV  קליטת נתוני החומרים מהקובץ הכללי
@@ -20,8 +30,8 @@ function MaterialsList() {
             VV להוסיף עיצוב לשתי התצוגות
             */
             }
-            <MaterialsGrid mData={materials} />
-            <MaterialsTable mData={materials} />
+            {!isTableView && <MaterialsGrid mData={materials}/>}
+            { isTableView && <MaterialsTable mData={materials}/>}
         </>
     );
 }
