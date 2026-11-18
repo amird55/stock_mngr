@@ -1,6 +1,7 @@
 import React from 'react';
 import materials from "./MaterialData.js";
 import MaterialsTable from "./MaterialsTable.jsx";
+import MaterialsGrid from "./MaterialsGrid.jsx";
 
 function MaterialsList() {
     return (
@@ -10,7 +11,7 @@ function MaterialsList() {
             </h1>
             {
             /*
-            קליטת נתוני החומרים מהקובץ הכללי
+            VV  קליטת נתוני החומרים מהקובץ הכללי
             כפתור בחירה בין שתי תצורות תצוגה:
             טבלה - הנתונים מוצגים בטבלה, שורה עבור על פריט
             גריד - הנתונים מוצגים כגלריה, כל פריט יהיה כותרת של שם ומתחת כמות
@@ -19,6 +20,7 @@ function MaterialsList() {
             להוסיף עיצוב לשתי התצוגות
             */
             }
+            <MaterialsGrid mData={materials} />
             <MaterialsTable mData={materials} />
         </>
     );

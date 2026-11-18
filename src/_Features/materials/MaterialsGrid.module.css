@@ -1,0 +1,10 @@
+.materials_grid{
+    display: grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px
+}
+.materials_grid div{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+}
