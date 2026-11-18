@@ -1,0 +1,4 @@
+add new material
+update
+delete
+הקטנת מלאי לפריט

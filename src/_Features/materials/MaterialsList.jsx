@@ -5,8 +5,11 @@ import MaterialsGrid from "./MaterialsGrid.jsx";
 import ViewModeChooser from "./ViewModeChooser.jsx";
 
 function MaterialsList() {
-    const [isTableView, setIsTableView] = useState(true);
+    let initVal=localStorage.getItem('viewMode');
+    initVal=initVal? JSON.parse(initVal):true;
+    const [isTableView, setIsTableView] = useState(initVal);
     const ToggleView = () => {
+        localStorage.setItem('viewMode', JSON.stringify(!isTableView));
         setIsTableView(!isTableView);
     }
     
