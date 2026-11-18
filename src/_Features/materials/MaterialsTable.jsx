@@ -1,8 +1,9 @@
 import React from 'react';
+import style from "./MaterialsTable.module.css"
 
 function MaterialsTable({mData}) {
     return (
-        <table>
+        <table className={style.materials_table}>
             <thead>
             <tr>
                 <th>שם</th>

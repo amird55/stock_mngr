@@ -1,0 +1,17 @@
+.materials_table{
+    width: 100%;
+}
+.materials_table thead tr{
+    background-color: yellow;
+}
+.materials_table td, .materials_table th {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid gray;
+}
+.materials_table tr:nth-child(even) {
+    background-color: lightgray;
+}
+.materials_table tbody tr:hover {
+    background-color: lightblue;
+}
