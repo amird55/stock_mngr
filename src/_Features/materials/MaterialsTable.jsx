@@ -3,7 +3,7 @@ import style from "./MaterialsTable.module.css"
 import {deleteMaterial} from "./MaterialApi.js";
 import { FaTrash } from "react-icons/fa";
 
-function MaterialsTable({mData}) {
+function MaterialsTable({mData,deleteFunc}) {
     return (
         <table className={style.materials_table}>
             <thead>
@@ -19,7 +19,7 @@ function MaterialsTable({mData}) {
                     <td>{item.name}</td>
                     <td>{item.Qty}</td>
                     <td>
-                        <FaTrash onClick={() => {deleteMaterial(index)}}/>
+                        <FaTrash onClick={() => {deleteFunc(index)}}/>
                     </td>
                 </tr>
             ))}

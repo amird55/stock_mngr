@@ -7,12 +7,18 @@ import ViewModeChooser from "./ViewModeChooser.jsx";
 function MaterialsList() {
     let initVal=localStorage.getItem('viewMode');
     initVal=initVal? JSON.parse(initVal):true;
+    const [mData,setMData]=useState(materials);
     const [isTableView, setIsTableView] = useState(initVal);
     const ToggleView = () => {
         localStorage.setItem('viewMode', JSON.stringify(!isTableView));
         setIsTableView(!isTableView);
     }
     
+    const deleteMaterial = (row)=>{
+        let newState=[...mData]
+        newState.splice(row,1);
+        setMData(newState);
+    }
     return (
         <>
             <h1>
@@ -22,19 +28,8 @@ function MaterialsList() {
                 isTableView={isTableView}
                 ToggleFunc={ToggleView}
                 />
-            {
-            /*
-            VV  קליטת נתוני החומרים מהקובץ הכללי
-            VV כפתור בחירה בין שתי תצורות תצוגה:
-            VV טבלה - הנתונים מוצגים בטבלה, שורה עבור על פריט
-            VV גריד - הנתונים מוצגים כגלריה, כל פריט יהיה כותרת של שם ומתחת כמות
-            התוכנה עולה עם תצורת התצוגה שנבחרה בפעם הקודמת
-            VV ברירת המחדל היא הטבלה
-            VV להוסיף עיצוב לשתי התצוגות
-            */
-            }
-            {!isTableView && <MaterialsGrid mData={materials}/>}
-            { isTableView && <MaterialsTable mData={materials}/>}
+            {!isTableView && <MaterialsGrid mData={mData}/>}
+            { isTableView && <MaterialsTable mData={mData} deleteFunc={deleteMaterial} />}
         </>
     );
 }
