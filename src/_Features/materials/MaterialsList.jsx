@@ -28,7 +28,7 @@ function MaterialsList() {
                 isTableView={isTableView}
                 ToggleFunc={ToggleView}
                 />
-            {!isTableView && <MaterialsGrid mData={mData}/>}
+            {!isTableView && <MaterialsGrid mData={mData}  deleteFunc={deleteMaterial} />}
             { isTableView && <MaterialsTable mData={mData} deleteFunc={deleteMaterial} />}
         </>
     );
