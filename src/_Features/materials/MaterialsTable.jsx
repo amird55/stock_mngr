@@ -1,6 +1,5 @@
 import React from 'react';
 import style from "./MaterialsTable.module.css"
-import {deleteMaterial} from "./MaterialApi.js";
 import { FaTrash } from "react-icons/fa";
 
 function MaterialsTable({mData,deleteFunc}) {
