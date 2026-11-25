@@ -1,6 +1,7 @@
 import React from 'react';
 import style from "./MaterialsTable.module.css"
 import {deleteMaterial} from "./MaterialApi.js";
+import { FaTrash } from "react-icons/fa";
 
 function MaterialsTable({mData}) {
     return (
@@ -18,9 +19,7 @@ function MaterialsTable({mData}) {
                     <td>{item.name}</td>
                     <td>{item.Qty}</td>
                     <td>
-                        <button onClick={() => {deleteMaterial(index)}}>
-                            מחיקה
-                        </button>
+                        <FaTrash onClick={() => {deleteMaterial(index)}}/>
                     </td>
                 </tr>
             ))}
