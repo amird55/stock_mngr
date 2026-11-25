@@ -1,13 +1,16 @@
-import React,{useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import materials from "./MaterialData.js";
 import MaterialsTable from "./MaterialsTable.jsx";
 import MaterialsGrid from "./MaterialsGrid.jsx";
 import ViewModeChooser from "./ViewModeChooser.jsx";
 
 function MaterialsList() {
+    const [mData,setMData]=useState([]);
+    useEffect(()=>{
+        setMData([...materials , {name:'מלח'  ,Qty:4}]);
+    },[])
     let initVal=localStorage.getItem('viewMode');
     initVal=initVal? JSON.parse(initVal):true;
-    const [mData,setMData]=useState(materials);
     const [isTableView, setIsTableView] = useState(initVal);
     const ToggleView = () => {
         localStorage.setItem('viewMode', JSON.stringify(!isTableView));

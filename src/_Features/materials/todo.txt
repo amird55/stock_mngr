@@ -1,6 +1,6 @@
 add new material
 update
-delete
+VV delete
 הקטנת מלאי לפריט
 סינון רשימה
 סידור רשימה בסדר עולה/יורד
